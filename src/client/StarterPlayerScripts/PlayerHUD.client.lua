@@ -46,34 +46,49 @@ topBar.Position = UDim2.new(0, 0, 0, 0)
 topBar.BackgroundColor3 = UIConfig.Colors.BarBackground
 topBar.BackgroundTransparency = UIConfig.Transparency.BarBackground
 topBar.BorderSizePixel = 0
+topBar.ClipsDescendants = true
 topBar.Parent = container
 
 local topBarCorner = Instance.new("UICorner")
 topBarCorner.CornerRadius = UDim.new(0, UIConfig.Sizes.CornerRadius)
 topBarCorner.Parent = topBar
 
+local textureBackground = Instance.new("ImageLabel")
+textureBackground.Name = "TextureBackground"
+textureBackground.Size = UDim2.new(1, 0, 1, 0)
+textureBackground.Position = UDim2.new(0, 0, 0, 0)
+textureBackground.BackgroundTransparency = 1
+textureBackground.Image = UIConfig.Textures.TopBarTexture
+textureBackground.ScaleType = Enum.ScaleType.Tile
+textureBackground.TileSize = UDim2.new(0, 128, 0, 128)
+textureBackground.ImageTransparency = UIConfig.Transparency.TextureOverlay
+textureBackground.ZIndex = 0
+textureBackground.Parent = topBar
+
 local clockLabel = Instance.new("TextLabel")
 clockLabel.Name = "ClockLabel"
-clockLabel.Size = UDim2.new(0, 160, 0, 20)
-clockLabel.Position = UDim2.new(0, 10, 0, 6)
+clockLabel.Size = UDim2.new(0, 140, 0, 16)
+clockLabel.Position = UDim2.new(0, 10, 0, 5)
 clockLabel.BackgroundTransparency = 1
-clockLabel.TextColor3 = UIConfig.Colors.White
+clockLabel.TextColor3 = UIConfig.Colors.ClockText
 clockLabel.TextSize = UIConfig.Fonts.ClockSize
 clockLabel.Font = Enum.Font.GothamBold
 clockLabel.TextXAlignment = Enum.TextXAlignment.Left
 clockLabel.Text = "00:00:00"
+clockLabel.ZIndex = 1
 clockLabel.Parent = topBar
 
 local moneyLabel = Instance.new("TextLabel")
 moneyLabel.Name = "MoneyLabel"
-moneyLabel.Size = UDim2.new(0, 160, 0, 26)
-moneyLabel.Position = UDim2.new(0, 10, 0, 28)
+moneyLabel.Size = UDim2.new(0, 140, 0, 24)
+moneyLabel.Position = UDim2.new(0, 10, 0, 22)
 moneyLabel.BackgroundTransparency = 1
-moneyLabel.TextColor3 = UIConfig.Colors.White
+moneyLabel.TextColor3 = UIConfig.Colors.MoneyText
 moneyLabel.TextSize = UIConfig.Fonts.MoneySize
 moneyLabel.Font = Enum.Font.GothamBold
 moneyLabel.TextXAlignment = Enum.TextXAlignment.Left
 moneyLabel.Text = "$0"
+moneyLabel.ZIndex = 1
 moneyLabel.Parent = topBar
 
 local iconCount = #UIConfig.IconOrder
@@ -90,6 +105,7 @@ for i, name in ipairs(UIConfig.IconOrder) do
 	button.BackgroundTransparency = UIConfig.Transparency.ButtonNormal
 	button.Image = UIConfig.Icons[name]
 	button.BorderSizePixel = 0
+	button.ZIndex = 2
 	button.Parent = topBar
 
 	local buttonCorner = Instance.new("UICorner")
