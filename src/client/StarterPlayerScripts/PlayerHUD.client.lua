@@ -53,17 +53,19 @@ local topBarCorner = Instance.new("UICorner")
 topBarCorner.CornerRadius = UDim.new(0, UIConfig.Sizes.CornerRadius)
 topBarCorner.Parent = topBar
 
-local textureBackground = Instance.new("ImageLabel")
-textureBackground.Name = "TextureBackground"
-textureBackground.Size = UDim2.new(1, 0, 1, 0)
-textureBackground.Position = UDim2.new(0, 0, 0, 0)
-textureBackground.BackgroundTransparency = 1
-textureBackground.Image = UIConfig.Textures.TopBarTexture
-textureBackground.ScaleType = Enum.ScaleType.Tile
-textureBackground.TileSize = UDim2.new(0, 128, 0, 128)
-textureBackground.ImageTransparency = UIConfig.Transparency.TextureOverlay
-textureBackground.ZIndex = 0
-textureBackground.Parent = topBar
+if UIConfig.Textures and UIConfig.Textures.TopBarTexture then
+	local textureBackground = Instance.new("ImageLabel")
+	textureBackground.Name = "TextureBackground"
+	textureBackground.Size = UDim2.new(1, 0, 1, 0)
+	textureBackground.Position = UDim2.new(0, 0, 0, 0)
+	textureBackground.BackgroundTransparency = 1
+	textureBackground.Image = UIConfig.Textures.TopBarTexture
+	textureBackground.ScaleType = Enum.ScaleType.Tile
+	textureBackground.TileSize = UDim2.new(0, 128, 0, 128)
+	textureBackground.ImageTransparency = UIConfig.Transparency.TextureOverlay or 0.6
+	textureBackground.ZIndex = 0
+	textureBackground.Parent = topBar
+end
 
 local clockLabel = Instance.new("TextLabel")
 clockLabel.Name = "ClockLabel"
