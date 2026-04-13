@@ -9,34 +9,41 @@ UIConfig.Icons = {
 
 UIConfig.IconOrder = { "Settings", "Profile", "Menu", "Cart" }
 
+UIConfig.Textures = {
+	TopBarTexture = "rbxassetid://REPLACE_WITH_TEXTURE_ID",
+}
+
 UIConfig.Colors = {
 	BarBackground = Color3.fromRGB(30, 30, 30),
 	ButtonBackground = Color3.fromRGB(20, 20, 20),
-	NeonGreen = Color3.fromRGB(0, 255, 70),
+	NeonGreen = Color3.fromRGB(0, 255, 60),
 	White = Color3.fromRGB(255, 255, 255),
+	ClockText = Color3.fromRGB(0, 255, 60),
+	MoneyText = Color3.fromRGB(0, 255, 60),
 }
 
 UIConfig.Sizes = {
-	TotalWidth = 340,
-	TopBarHeight = 60,
-	HealthBarHeight = 28,
-	BarGap = 4,
-	IconSize = 28,
-	CornerRadius = 6,
-	ButtonPadding = 10,
-	ButtonSpacing = 42,
+	TotalWidth = 295,
+	TopBarHeight = 48,
+	HealthBarHeight = 32,
+	BarGap = 2,
+	IconSize = 24,
+	CornerRadius = 8,
+	ButtonPadding = 6,
+	ButtonSpacing = 34,
 }
 
 UIConfig.Transparency = {
 	BarBackground = 0.25,
-	ButtonNormal = 0.4,
+	ButtonNormal = 0.3,
 	ButtonHover = 0.1,
+	TextureOverlay = 0.6,
 }
 
 UIConfig.Fonts = {
 	ClockSize = 13,
-	MoneySize = 20,
-	HealthSize = 13,
+	MoneySize = 22,
+	HealthSize = 14,
 }
 
 UIConfig.Leaderstats = {
@@ -45,6 +52,7 @@ UIConfig.Leaderstats = {
 
 table.freeze(UIConfig.Icons)
 table.freeze(UIConfig.IconOrder)
+table.freeze(UIConfig.Textures)
 table.freeze(UIConfig.Colors)
 table.freeze(UIConfig.Sizes)
 table.freeze(UIConfig.Transparency)
